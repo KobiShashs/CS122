@@ -1,0 +1,13 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.router-link-active{
+  color:whitesmoke;
+  font-size: large;
+}
+
+a{
+  color: navy;
+  font-size: medium;
+}

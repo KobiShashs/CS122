@@ -1,0 +1,41 @@
+<h1>Customers</h1>
+
+
+
+
+
+<ng-container *ngIf="customers; else elseTemplate">
+  <table>
+    <tr>
+      <th>id</th>
+      <th>first</th>
+      <th>last</th>
+      <th>email</th>
+      <th>password</th>
+      <th>actions <button>+</button></th>
+    </tr>
+    <tr *ngFor="let c of customers">
+      <td>{{c.id}}</td>
+      <td>{{c.first}}</td>
+      <td>{{c.last}}</td>
+      <td>{{c.email}}</td>
+      <td>{{c.password}}</td>
+      <td><button>Update</button> <button>Delete</button></td>
+    </tr>
+
+  </table>
+</ng-container>
+<ng-template #elseTemplate>
+<div>
+  <img src="https://media.giphy.com/media/dBZb8nAfLfOZ8B0CHA/giphy.gif" alt="">
+</div></ng-template>
+
+
+
+
+
+
+
+
+
+
