@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
       alert('Yalla Bye!');
       this.flag = !this.flag;
     } else {
-      alert('I know you love us!')
+      alert('I know you love us!');
     }
 
   }

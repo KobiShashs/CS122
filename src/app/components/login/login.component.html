@@ -1,0 +1,33 @@
+<div>
+  <h1>Login</h1>
+
+
+  <form #formInfo="ngForm">
+    <input #emailInfo="ngModel" type="email" required email placeholder="email" [(ngModel)]="loginDetails.email" name="email">
+    <br>
+    <span *ngIf="emailInfo.errors?.required && emailInfo.touched">Email is mandatory</span>
+    <span *ngIf="emailInfo.errors?.email && emailInfo.touched">Incorrect Email </span>
+    <br>
+    <input #passwordInfo="ngModel" type="password" required pattern="^.{4,24}$" placeholder="password" [(ngModel)]="loginDetails.password" name="password">
+    <br>
+    <span *ngIf="passwordInfo.errors?.required && passwordInfo.touched">Password is mandatory</span>
+    <span *ngIf="passwordInfo.errors?.pattern && passwordInfo.touched">Password should be btw 4-24 letters</span>
+    <br>
+    <select #typeInfo="ngModel" name="type" required  [(ngModel)]="loginDetails.type">
+      <option value="" disabled selected>Choose type </option>
+      <option value="Admin">Admin</option>
+      <option value="Company">Company</option>
+      <option value="Customer">Customer</option>
+    </select>
+    <br>
+
+    <span *ngIf="typeInfo.errors?.required && typeInfo.touched">You Must select Type</span>
+    <br>
+    <button [disabled]="formInfo.invalid" (click)="login()">login</button>
+  </form>
+  <div *ngIf="isDev()">
+    <hr>
+    <p>{{'{'+loginDetails?.email+','+loginDetails.password+','+loginDetails.type+'}'}}</p>
+  </div>
+
+</div>

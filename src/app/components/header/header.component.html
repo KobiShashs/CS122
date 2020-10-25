@@ -12,7 +12,7 @@
 
 
     <ng-container *ngIf="flag; else elseTemplate">
-      <button  mat-raised-button color="warn" (click)="login()">Login</button>
+      <button [routerLink]="['/login']" routerLinkActive="router-link-active"   mat-raised-button color="warn" (click)="login()">Login</button>
     </ng-container>
     <ng-template #elseTemplate>
       <button mat-raised-button color="warn" (click)="logout()">Logout</button>

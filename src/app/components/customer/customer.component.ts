@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private title: Title, private router: Router) {
+    this.title.setTitle('customer');
+  }
 
   ngOnInit(): void {
+  }
+
+  public yallaBalagan(): void {
+    this.router.navigateByUrl('company');
   }
 
 }

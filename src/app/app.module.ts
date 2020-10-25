@@ -14,6 +14,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 
 import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import {FormsModule} from '@angular/forms';
+import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import {HttpClientModule} from '@angular/common/http';
     AdminComponent,
     CompanyComponent,
     CustomerComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    CustomerDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,8 @@ import {HttpClientModule} from '@angular/common/http';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
